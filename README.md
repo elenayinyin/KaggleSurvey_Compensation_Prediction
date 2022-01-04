@@ -18,6 +18,8 @@ Given a set of survey responses by data scientists, predict what a survey respon
 **Findings:**
 - We have overall imbalanced multiclass dataset and should be careful with the design of an evaluation metric later. Notice that around 60% of the survey respondents have average compensation in the range of $0-10,000. And the observation matches with the common sense that higher salary level is mainly made up of people with longer experience in writing code.
 
+![alt text](https://github.com/elenayinyin/KaggleSurvey_Compensation_Prediction/blob/main/salary_level.png)
+
 - After applying the Lasso regression and Chi-square test, we keep 30 features & 15 classes in total and notice that the factor geographic region/country has large impact on the compensation level.
 
 -  We define the ordinal multi-class logistic regression algorithm in a function called ordmulti and evaluate the model performance based on F1 score. After model tuning and choice of optimal model, we examine the true target values and predictions on testing data as below. We conclude that the model is biased towards one class and somehow the testing data get more samples of the biased class and achiever higher score. We could further weigh classes inversely proportional to their frequency using random forest or try SMOTE oversampling to improve the performance.
